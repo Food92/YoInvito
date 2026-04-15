@@ -1,0 +1,36 @@
+package com.YoInvito.YoInvito.models;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+import java.time.LocalDate;
+
+@Embeddable
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
+public class Audit {
+    @Column(name="createAt")
+    private LocalDate createAt;
+
+    @Column(name="updateAt")
+    private LocalDate updateAt;
+
+    @PrePersist
+    public void prePersist(){
+        this.createAt=LocalDate.now();
+    }
+
+    @PreUpdate
+    public void preUpdate(){
+        this.updateAt=LocalDate.now();
+    }
+
+}
