@@ -30,17 +30,6 @@ public class ProductoServiceImpl implements ProductoService {
                 ()-> new ProductoException("Producto con ID:" +id + "no se encuentra"));
     }
 
-    @Transactional(readOnly = true)
-    @Override
-    public List<Producto> findByName(String name) {
-        return this.productoRepository.findByName(name);
-    }
-
-    @Transactional(readOnly = true)
-    @Override
-    public List<Producto> findByRestaurant(Restaurant restaurant) {
-        return this.productoRepository.findByRestaurant(restaurant);
-    }
 
     @Transactional
     @Override
