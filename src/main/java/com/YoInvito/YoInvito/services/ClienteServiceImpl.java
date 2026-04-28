@@ -10,35 +10,35 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class ClienteServiceImpl {
-    @Autowired
-    private ClienteRepository clienteRepository;
+public class ClienteServiceImpl implements ClienteService {
 
-    @Transactional(readOnly = true)
-    public List<Cliente> findAll(){
-        return this.clienteRepository.findAll();
+    @Override
+    public List<Cliente> findAll() {
+        return List.of();
     }
 
-    @Transactional(readOnly = true)
-    public Cliente findById(Long id){
-        return this.clienteRepository.findById(id).orElseThrow(()-> new ClienteException("Cliente no se encuentra"));
+    @Override
+    public Cliente findById(Long id) {
+        return null;
     }
 
-    @Transactional(readOnly = true)
-    public Cliente findByRun(String run){
-        return this.clienteRepository.findByRun(run).orElseThrow(()-> new ClienteException("Cliente con este run no se encuentra"));
+    @Override
+    public Cliente findByRun(String run) {
+        return null;
     }
 
-    @Transactional
-    public Cliente save(Cliente cliente){
-        if(this.clienteRepository.findByRun(cliente.getRun()).isPresent()){
-            throw new ClienteException("Cliente existente");}
-            return this.clienteRepository.save(cliente);
+    @Override
+    public Cliente save(Cliente cliente) {
+        return null;
     }
 
-    @Transactional
-    public void deleteById(Long id){
-        this.clienteRepository.deleteById(id);
+    @Override
+    public void delete(Long id) {
+
     }
 
+    @Override
+    public Cliente update(Long id, Cliente cliente) {
+        return null;
+    }
 }

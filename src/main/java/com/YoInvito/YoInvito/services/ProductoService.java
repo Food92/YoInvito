@@ -12,5 +12,5 @@ public interface ProductoService {
     List<Producto> findByRestaurant(Restaurant restaurant);
     Producto update(Long id, Producto producto);
     Producto save(Producto producto);
-    Producto delete(Long id);
+    void delete(Long id);
 }

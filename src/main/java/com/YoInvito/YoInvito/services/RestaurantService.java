@@ -8,6 +8,6 @@ public interface RestaurantService {
     List<Restaurant> findAll();
     Restaurant findById(Long id);
     Restaurant save(Restaurant restaurant);
-    Restaurant update(Restaurant restaurant);
+    Restaurant update(Long id,Restaurant restaurant);
     void delete(Long id);
 }
