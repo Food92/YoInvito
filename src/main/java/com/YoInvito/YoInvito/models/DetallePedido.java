@@ -11,13 +11,15 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @Table(name = "detalle_pedido")
+@Entity
+
 public class DetallePedido {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long idDetalle;
 
     @ManyToOne
-    @JoinColumn(name = "id_producto", nullable = false)
+    @JoinColumn(name = "id_pedido", nullable = false)
     private Pedido pedido;
 
     @ManyToOne

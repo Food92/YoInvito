@@ -17,5 +17,5 @@ public class PededidoCreacionDTO {
     private LocalDate horaPedido;
 
     @NotNull(message = "El campo de precio no puede ser vacio")
-    private Double precioPPedido;
+    private Double precioPedido;
 }
